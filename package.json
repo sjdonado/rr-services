@@ -1,0 +1,33 @@
+{
+  "name": "rr-services",
+  "version": "1.0.0",
+  "description": "A facebook boot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon inde.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjdonado/rr-services.git"
+  },
+  "author": "sjdonado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjdonado/rr-services/issues"
+  },
+  "homepage": "https://github.com/sjdonado/rr-services#readme",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.6"
+  }
+}
