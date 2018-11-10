@@ -1,8 +1,9 @@
-require('dotenv').config();
-
 const config = {
   facebook: {
     accessToken: process.env.FACEBOOK_PAGE_ACCESS_TOKEN,
+  },
+  database: {
+    url: process.env.DATABASE_URL,
   },
   bot: {
     token: process.env.BOT_TOKEN,
@@ -10,4 +11,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;

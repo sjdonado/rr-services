@@ -4,8 +4,11 @@
   "description": "A facebook boot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon inde.js"
+    "build": "webpack --config webpack.config.js --env.production --watch",
+    "proxy": "./ngrok http 3000",
+    "start": "node index.js",
+    "prestart:dev": "export DEBUG='express:*'",
+    "start:dev": "webpack-dev-server --inline --env.production=false"
   },
   "repository": {
     "type": "git",
@@ -18,16 +21,21 @@
   },
   "homepage": "https://github.com/sjdonado/rr-services#readme",
   "dependencies": {
-    "apiai": "^4.0.3",
     "body-parser": "^1.18.3",
-    "dotenv": "^6.1.0",
+    "dotenv-webpack": "^1.5.7",
     "express": "^4.16.4",
-    "request": "^2.88.0"
+    "mongoose": "^5.3.11"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.6"
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-node-externals": "^1.7.2"
   }
 }
