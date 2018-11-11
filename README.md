@@ -8,12 +8,6 @@
     npm run proxy
 ```
 
-# Development
-
-```
-    npm run start:dev
-```
-
 # Env variables
 
 ```

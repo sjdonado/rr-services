@@ -1,15 +1,13 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import config from './config';
+const config = require('./config');
 
 const {
   database,
 } = config;
 
-const connect = () => {
+module.exports = () => {
   mongoose.connect(database.url, { useNewUrlParser: true });
 
   mongoose.connection.on('open', () => {});
 };
-
-export default connect;

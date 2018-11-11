@@ -1,10 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+const express = require('express');
+const bodyParser = require('body-parser');
 
-import database from './database';
+const database = require('./database');
 
-import authMiddleware from './middlewares/auth';
-import messageController from './controllers/message';
+const authMiddleware = require('./middlewares/auth');
+const messageController = require('./controllers/message');
 
 database();
 const app = express();

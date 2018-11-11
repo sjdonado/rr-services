@@ -10,9 +10,10 @@
       "request": "attach",
       "port": 9229,
       "address": "localhost",
-      "localRoot": "${workspaceFolder}/src",
-      "remoteRoot": "/usr/src/app/src",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app",
       "protocol": "inspector",
+      "preLaunchTask": "npm: start-debug",
     }
   ]
 }

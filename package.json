@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "proxy": "./ngrok http 3000",
-    "build": "webpack --config webpack.config.js --watch",
+    "start-debug": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up -d",
     "debug": "nodemon --inspect=0.0.0.0:9229 src/index.js",
-    "debug-server": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up",
-    "start": "concurrently \"npm run build\" \"nodemon dist/index.js\"",
-    "start:dev": "webpack-dev-server --hot --inline"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,22 +21,14 @@
   "homepage": "https://github.com/sjdonado/rr-services#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "concurrently": "^4.0.1",
-    "dotenv-webpack": "^1.5.7",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "mongoose": "^5.3.11",
     "nodemon": "^1.18.6"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
-    "webpack-node-externals": "^1.7.2"
+    "eslint-plugin-import": "^2.14.0"
   }
 }

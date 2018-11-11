@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const config = {
   facebook: {
     accessToken: process.env.FACEBOOK_PAGE_ACCESS_TOKEN,
@@ -11,4 +13,4 @@ const config = {
   },
 };
 
-export default config;
+module.exports = config;

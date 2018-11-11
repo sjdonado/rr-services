@@ -1,6 +1,6 @@
-import config from '../config';
+const config = require('../config');
 
-export default (req, res, next) => {
+module.exports = (req, res, next) => {
   if (req.headers.authorization === config.bot.token) {
     next();
   } else {
