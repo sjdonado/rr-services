@@ -9,9 +9,7 @@ const {
 const connect = () => {
   mongoose.connect(database.url, { useNewUrlParser: true });
 
-  mongoose.connection.on('open', () => {
-    console.log('Database connected');
-  });
+  mongoose.connection.on('open', () => {});
 };
 
 export default connect;

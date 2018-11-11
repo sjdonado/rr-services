@@ -1,4 +1,4 @@
-version: '2.1'
+version: '3'
 
 services:
   rr-services:
@@ -9,5 +9,12 @@ services:
     ports:
       - 3000:3000
       - 9229:9229
-    ## set your startup file here
-    command: node --inspect index.js
+    command: npm run debug
+    depends_on:
+      - db
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_12345

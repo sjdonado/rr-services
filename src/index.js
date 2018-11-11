@@ -14,4 +14,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', authMiddleware, messageController);
 
-app.listen(3000, () => console.log('Webhook server is listening, port 3000'));
+app.listen(3000);
