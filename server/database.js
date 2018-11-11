@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
-const config = require('./config');
-
-const {
-  database,
-} = config;
+const { database } = require('./config');
 
 module.exports = () => {
   mongoose.connect(database.url, { useNewUrlParser: true });

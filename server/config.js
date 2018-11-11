@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const config = {
+  port: process.env.PORT,
   facebook: {
     accessToken: process.env.FACEBOOK_PAGE_ACCESS_TOKEN,
   },

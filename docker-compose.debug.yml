@@ -9,7 +9,7 @@ services:
     ports:
       - 3000:3000
       - 9229:9229
-    command: npm run debug
+    command: yarn run start:debug
     depends_on:
       - db
   db:
@@ -18,3 +18,5 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root_12345
+    volumes:
+      - ./data/db:/data/db

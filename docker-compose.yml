@@ -10,7 +10,7 @@ services:
       - .:/usr/src/app
     ports:
       - 3000:3000
-    command: npm start
+    command: yarn run start:server
     depends_on:
       - db
   db:
@@ -19,4 +19,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root_12345
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
   
