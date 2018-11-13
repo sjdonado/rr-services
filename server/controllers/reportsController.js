@@ -1,20 +1,26 @@
 const {
   ReportModel,
+  reportReferences,
 } = require('../models/reportModel');
 
-module.exports.saveReport = (req, res, next) => {
+const referencesNames = [
+  ...Object.getOwnPropertyNames(reportReferences),
+];
+
+exports.saveReport = (req, res, next) => {
   const {
-    doc,
+    consumer,
     body,
   } = req;
 
   const {
-    result,
+    queryResult,
   } = body;
 
-  Object.assign(doc, result);
+  const report = new ReportModel(Object.assign({ consumerId: consumer.id },
+    { action: queryResult.action, text: queryResult.queryText }));
 
-  doc.save()
+  report.save()
     .then((updated) => {
       res.status(200).json({
         success: true,
@@ -26,39 +32,16 @@ module.exports.saveReport = (req, res, next) => {
     });
 };
 
-module.exports.getReport = (req, res, next) => {
-  const {
-    body,
-  } = req;
-
-  const {
-    sessionId,
-    result,
-  } = body;
-
-  // body.originalRequest.data.sender.id
-  // body.sessionId -> "5afaf395-78bc-494a-860e-b774b73f17d7"
-  // body.result.contexts
-  // body.result.action
-  // body.result.resolvedQuery
-
-  ReportModel.find({ sessionId })
+exports.getReports = (req, res, next) => {
+  ReportModel
+    .find()
+    .populate(referencesNames.join(' '))
+    .exec()
     .then((doc) => {
-      if (doc) {
-        req.doc = doc;
-        next();
-      } else {
-        Object.assign(result, { sessionId });
-        const document = new ReportModel(result);
-        document.save()
-          .then((newDoc) => {
-            req.doc = newDoc;
-            next();
-          })
-          .catch((err) => {
-            next(new Error(err));
-          });
-      }
+      res.status(200).json({
+        success: true,
+        item: doc,
+      });
     })
     .catch((err) => {
       next(new Error(err));

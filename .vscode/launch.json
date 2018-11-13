@@ -13,7 +13,6 @@
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/usr/src/app",
       "protocol": "inspector",
-      "preLaunchTask": "npm: start-debug",
     }
   ]
 }

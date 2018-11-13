@@ -8,8 +8,8 @@
     "setup": "yarn --cwd ./client install && yarn --cwd ./server install",
     "proxy": "./ngrok http 3000",
     "start": "docker-compose up",
-    "start:client": "PORT=3000 yarn --cwd ./client start",
-    "start:debug": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up -d",
+    "start:client": "PORT=4000 yarn --cwd ./client start",
+    "start:debug": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up",
     "start:server": "concurrently --kill-others-on-fail \"yarn run start:client\" \"yarn --cwd ./server start\""
   },
   "repository": {

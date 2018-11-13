@@ -5,51 +5,39 @@ const {
 } = mongoose;
 
 const reportFields = {
-  firstname: {
+  action: {
     type: String,
     required: true,
     trim: true,
   },
-  lastname: {
+  text: {
     type: String,
     required: true,
-    trim: true,
-  },
-  photo_url: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-  password: {
-    type: String,
-    required: true,
-    trim: true,
-    min: 6,
-  },
-  description: {
-    type: String,
-    default: '',
     trim: true,
   },
 };
 
-const report = new Schema(reportFields, {
+const reportReferences = {
+  consumerId: {
+    type: Schema.Types.ObjectId,
+    ref: 'consumer',
+    required: true,
+  },
+};
+
+const report = new Schema(Object.assign(reportFields, reportReferences), {
   timestamps: true,
 });
 
 report.methods.toJSON = function toJSON() {
   const doc = this.toObject();
-  // delete doc.password;
+  delete doc._id;
+  delete doc.__v;
   return doc;
 };
 
 module.exports = {
   ReportModel: mongoose.model('report', report),
   reportFields,
+  reportReferences,
 };

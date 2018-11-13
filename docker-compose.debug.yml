@@ -6,17 +6,25 @@ services:
     build: .
     environment:
       NODE_ENV: development
+    volumes:
+      - .:/usr/src/app
     ports:
       - 3000:3000
       - 9229:9229
-    command: yarn run start:debug
+    command: yarn run debug
     depends_on:
       - db
   db:
     image: mongo
     restart: always
     environment:
+      MONGO_INITDB_DATABASE: rrServices
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root_12345
     volumes:
-      - ./data/db:/data/db
+      - mongodata:/data/db
+    ports:
+      - 27017:27017
+volumes:
+  mongodata:
+  

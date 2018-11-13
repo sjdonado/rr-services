@@ -17,10 +17,13 @@ services:
     image: mongo
     restart: always
     environment:
+      MONGO_INITDB_DATABASE: rrServices
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root_12345
     volumes:
       - mongodata:/data/db
+    ports:
+      - 27017:27017
 volumes:
   mongodata:
   

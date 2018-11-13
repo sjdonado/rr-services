@@ -4,7 +4,7 @@
   "description": "A facebook boot",
   "main": "index.js",
   "scripts": {
-    "debug": "nodemon --inspect=0.0.0.0:9229 src/index.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 index.js",
     "start": "nodemon index.js"
   },
   "author": "sjdonado",
