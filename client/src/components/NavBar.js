@@ -29,8 +29,12 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     let imageUrl = "";
-    if(localStorage.getItem('USER_OBJECT')) {
-      imageUrl = JSON.parse(localStorage.getItem('USER_OBJECT')).imageUrl;
+    if(typeof localStorage.getItem('USER_OBJECT') != "undefined") {
+      try{
+        imageUrl = JSON.parse(localStorage.getItem('USER_OBJECT')).imageUrl;
+      }catch(e) {
+        
+      }
     }
     this.state = {
       auth: true,
