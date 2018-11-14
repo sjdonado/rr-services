@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SERVER_URL = 'http://localhost:3000/api/v1';
+const SERVER_URL = 'http://rrservicesdev.tk:3000/api/v1';
 
 class HttpClient {
   constructor(path) {
