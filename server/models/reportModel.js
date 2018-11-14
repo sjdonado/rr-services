@@ -10,16 +10,20 @@ const reportFields = {
     required: true,
     trim: true,
   },
-  problem: {
+  text: {
     type: String,
-    required: true,
     trim: true,
   },
-  description: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  // problem: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  // },
+  // description: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  // },
 };
 
 const reportReferences = {
