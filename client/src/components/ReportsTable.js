@@ -41,7 +41,7 @@ class ReportsTable extends React.Component {
       .then((reports) => {
         console.log(reports);
         this.setState({
-          reportsData: reports.data,
+          reportsData: reports.data.length > 0 ? reports.data : [],
           statisticsPerHour: reports.statisticsPerHour
         });
       });
