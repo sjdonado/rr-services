@@ -28,7 +28,10 @@ const styles = theme => ({
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    const imageUrl = JSON.parse(localStorage.getItem('USER_OBJECT')).imageUrl;
+    let imageUrl = "";
+    if(localStorage.getItem('USER_OBJECT')) {
+      imageUrl = JSON.parse(localStorage.getItem('USER_OBJECT')).imageUrl;
+    }
     this.state = {
       auth: true,
       anchorEl: null,
