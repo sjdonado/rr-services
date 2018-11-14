@@ -17,7 +17,9 @@ exports.saveReport = (req, res, next) => {
     queryResult,
   } = body;
 
-  if (queryResult.action === 'support.problem' || queryResult.action === 'support.feedback' || queryResult.action === 'support.beta') {
+  if (queryResult.action === 'support.problem'
+    || queryResult.action === 'support.feedback'
+    || queryResult.action === 'support.beta') {
     const report = new ReportModel(Object.assign({ consumerId: consumer.id },
       { action: queryResult.action, text: queryResult.queryText }));
     report.save()

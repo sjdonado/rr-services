@@ -14,6 +14,14 @@ class HttpClient {
         console.log(error);
       })
   }
+
+  post(body, endpoint = '') {
+    return axios.post(`${this.path}${endpoint}`, body)
+      .then(res => res.data)
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
 }
 
 export default HttpClient;

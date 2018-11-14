@@ -104,7 +104,7 @@ class ReportsTable extends React.Component {
           },
           title: {
             display: true,
-            text: 'Customer statistics 14/11/18'
+            text: `Customer statistics ${new Date().toLocaleDateString()}`
           }
         }}/>
         <Paper className={classes.root}>

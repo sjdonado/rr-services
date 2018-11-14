@@ -10,7 +10,12 @@ const reportFields = {
     required: true,
     trim: true,
   },
-  text: {
+  problem: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  description: {
     type: String,
     required: true,
     trim: true,
