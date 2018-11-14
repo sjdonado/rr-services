@@ -10,6 +10,7 @@ services:
       - .:/usr/src/app
     ports:
       - 3000:3000
+      - 4000:4000
       - 9229:9229
     command: yarn run debug
     depends_on:
