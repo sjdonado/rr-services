@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sjdonado/rr-services#readme",
   "dependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "lodash": "^4.17.13"
   }
 }
