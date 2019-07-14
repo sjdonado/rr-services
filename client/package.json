@@ -16,6 +16,7 @@
     "react-google-login": "^3.2.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
+    "webpack-dev-server": "^3.1.11",
     "xlsx": "^0.14.0"
   },
   "scripts": {
