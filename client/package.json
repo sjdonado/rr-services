@@ -8,7 +8,7 @@
     "axios": "^0.18.0",
     "chart.js": "^2.7.3",
     "handlebars": "^4.5.3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
     "react": "^16.6.1",
     "react-chartjs-2": "^2.7.4",
